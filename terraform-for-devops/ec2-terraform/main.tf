@@ -61,6 +61,7 @@ resource "aws_security_group" "allow_ssh" {
 
 # ec2 instance
 resource "aws_instance" "web_server" {
+  count                  = var.instance_count
   ami                    = var.ami_id
   instance_type          = var.instance_type
   key_name               = var.key_pair_name
@@ -73,6 +74,6 @@ resource "aws_instance" "web_server" {
   }
 
   tags = {
-    Name = "Terraform-Web-Server"
+    Name = "Terraform-Web-Server-${count.index + 1}"
   }
 }

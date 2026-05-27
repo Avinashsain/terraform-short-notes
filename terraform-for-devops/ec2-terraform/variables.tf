@@ -28,3 +28,8 @@ variable "availability_zone" {
   default     = "ap-south-1b"
   description = "Availability zone for the resources"
 }
+variable "instance_count" {
+  type        = number
+  default     = 2
+  description = "Number of EC2 instances to create"
+}
