@@ -1,0 +1,14 @@
+module "lambda_function" {
+  source = "terraform-aws-modules/lambda/aws"
+
+  function_name = "my-calculator-lambda"
+  description   = "My calculator Lambda function"
+  handler       = "index.lambda_handler"
+  runtime       = "python3.12"
+
+  source_path = "./src/calculator/index.py"
+
+  tags = {
+    Name = "my-calculator-lambda"
+  }
+}

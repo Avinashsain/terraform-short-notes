@@ -6,7 +6,7 @@ terraform {
     }
   }
 
-  backend "s3" {
+  clebackend "s3" {
     bucket         = "b15terraformbucket"  # Your bucket name
     key            = "terraform.tfstate"
     region         = "ap-south-1"
